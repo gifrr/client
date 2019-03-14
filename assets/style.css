@@ -2,7 +2,8 @@
     background-color: #f7f5df;
     color: #8c6a3f;
     padding: 20px;
-    position: fixed;
+    /* position: fixed; */
+    z-index: 5;
 }
 
 .search-bar, .upload {
