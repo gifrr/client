@@ -1,0 +1,15 @@
+#navbar {
+    background-color: #f7f5df;
+    color: #8c6a3f;
+    padding: 20px;
+    position: fixed;
+}
+
+.search-bar, .upload {
+    margin-top: 10px;
+}
+
+.logo {
+    font-family: 'Baloo Chettan', cursive;
+    font-size: 40px;
+}
