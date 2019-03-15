@@ -12,6 +12,11 @@ const app = new Vue({
         uploadGif: false
     },
     methods: {
+        toHomepage() {
+            this.allGifs = true
+            this.filterGifs = false
+            this.uploadGif = false
+        },
         filterGif(payload) {
             baseURL
                 .get(`/gifs?search=${payload}`)
@@ -25,11 +30,14 @@ const app = new Vue({
                     console.log(response);
                 })
         },
-        getAllGifs() {
+        getAllGifs(payload) {
             baseURL
                 .get(`/gifs`)
                 .then(({ data }) => {
                     this.gifsData = data
+                    if (payload) {
+                        this.toHomepage()
+                    }
                 })
                 .catch(({ response }) => {
                     console.log(response);
