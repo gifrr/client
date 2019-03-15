@@ -12,14 +12,13 @@ Vue.component('card-image', {
         }
     },
     template: `
-    <div class="container">
         <div class="card" style="width:400px">
             <img class="card-img-top" :src="gif.gif" alt="Card image"
                 style="width:100%">
             <div class="card-body">
                 <h4 class="card-title">{{gif.title}}</h4>
-                <span v-for="tag in gif.tag">
-                    <button class="btn btn-warning">{{tag}}}</button>
+                <span v-for="tag in gif.tags">
+                    <button class="btn btn-danger">{{tag.name}}</button> &nbsp
                 </span>
                 <br><br>
                 
@@ -30,6 +29,5 @@ Vue.component('card-image', {
             </div>
                 
         </div>
-    </div>
     `
 })

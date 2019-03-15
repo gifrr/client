@@ -12,25 +12,29 @@
     <link rel="stylesheet" href="./assets/style.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>GIFRR</title>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v3.2"></script>
 </head>
 
 <body>
     <div id="app">
-        <navbar-gifrr @filter-gif="filterGif">
+        <navbar-gifrr @filter-gif="filterGif" @show-form="showUploadForm">
         </navbar-gifrr>
-        <filter-result v-bind:data-filter="dataFilter"></filter-result>
-        <create-gif-form></create-gif-form>
+        <homepage v-if="allGifs" v-bind:allgifsdata="gifsData" ></homepage>
+        <create-gif-form v-if="uploadGif"></create-gif-form>
+        <filter-result v-bind:data-filter="dataFilter" v-if="filterGifs"></filter-result>
     </div>
-
-
+    
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
     <script src="https://unpkg.com/@johmun/vue-tags-input/dist/vue-tags-input.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <!-- components -->
     <script src="./assets/components/filter-result.js"></script>
     <script src="./assets/components/card-image.js"></script>
+    <script src="./assets/components/homepage.js"></script>
     <script src="./assets/components/navbar.js"></script>
     <script src="./assets/components/gif-form.js"></script>
+    <!-- components -->
+    
     <script src="./assets/main.js"></script>
 </body>
 
