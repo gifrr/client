@@ -1,3 +1,8 @@
+
+const baseURL = axios.create({
+    baseURL: `http://localhost:3000`
+})
+
  const app = new Vue({
      el: '#app',
      data: {
@@ -6,7 +11,8 @@
 
      methods: {
          filterGif(payload) {
-             axios.get(`http://localhost:3000/gif?search=${payload}`)
+             baseURL
+               .get(`http://localhost:3000/gifs?search=${payload}`)
                  .then(({
                      data
                  }) => {

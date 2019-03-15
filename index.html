@@ -20,13 +20,17 @@
         <navbar-gifrr @filter-gif="filterGif">
         </navbar-gifrr>
         <filter-result v-bind:data-filter="dataFilter"></filter-result>
+        <create-gif-form></create-gif-form>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
+    <script src="https://unpkg.com/@johmun/vue-tags-input/dist/vue-tags-input.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./assets/components/filter-result.js"></script>
     <script src="./assets/components/card-image.js"></script>
     <script src="./assets/components/navbar.js"></script>
+    <script src="./assets/components/gif-form.js"></script>
     <script src="./assets/main.js"></script>
 </body>
 
