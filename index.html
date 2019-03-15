@@ -17,17 +17,8 @@
 </head>
 
 <body>
-
-
-    </button>
-
-
     <div id="app">
-
-        <navbar-gifrr @filter-gif="filterGif" @show-form="showUploadForm">
-
         <navbar-gifrr @to-homepage="toHomepage" @filter-gif="filterGif" @show-form="showUploadForm">
-
         </navbar-gifrr>
         <homepage v-if="allGifs" v-bind:allgifsdata="gifsData" ></homepage>
         <create-gif-form @to-homepage="getAllGifs" v-if="uploadGif"></create-gif-form>
@@ -43,18 +34,6 @@
     <script src="./assets/components/filter-result.js"></script>
     <script src="./assets/components/card-image.js"></script>
     <script src="./assets/components/homepage.js"></script>
-        <navbar-gifrr @filter-gif="filterGif"></navbar-gifrr>
-        <create-gif-form></create-gif-form>
-        <filter-result v-bind:data-filter="dataFilter"></filter-result>
-    </div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
-    <script src="https://unpkg.com/@johmun/vue-tags-input/dist/vue-tags-input.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./assets/components/filter-result.js"></script>
-    <script src="./assets/components/card-image.js"></script>
-
     <script src="./assets/components/navbar.js"></script>
     <script src="./assets/components/gif-form.js"></script>
     <!-- components -->

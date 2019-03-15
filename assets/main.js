@@ -46,9 +46,7 @@ const app = new Vue({
                         this.toHomepage()
                     }
                 })
-                .catch(({
-                    response
-                }) => {
+                .catch(({ response }) => {
                     console.log(response);
                 })
         },
