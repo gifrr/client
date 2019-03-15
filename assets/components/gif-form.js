@@ -57,6 +57,9 @@ Vue.component('create-gif-form', {
             })
             .then(({data}) => {
                 if (data) {
+                    data.forEach(e => {
+                        
+                    })
                     console.log(data)
                     this.tags = data.labels
                     this.gif = data.gif
