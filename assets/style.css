@@ -5,6 +5,28 @@
     /* position: fixed; */
     z-index: 5;
 }
+a.homepage {
+    color: red;
+}
+
+a.homepage:hover {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    
+}
+
+a:hover {
+    color: yellow;
+    font-weight: bold;
+    text-decoration: none;
+
+}
 
 .search-bar,
 .upload {

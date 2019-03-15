@@ -39,7 +39,7 @@ Vue.component('create-gif-form', {
                 setTimeout(() => { 
                     this.form = true
                     this.showLoading = false
-                }, 1000);
+                }, 2500);
                 // CreatingArticleSucceed.fire({
                 //     type: 'success',
                 //     title: 'Article has been created'
