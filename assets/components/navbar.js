@@ -6,8 +6,8 @@ Vue.component('navbar-gifrr', {
     },
     methods: {
         submitFilter() {
-            console.log('masuk');
-            
+            // console.log('masuk');
+
             this.$emit('filter-gif', this.inputFilter)
         }
     },

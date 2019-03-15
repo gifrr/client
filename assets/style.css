@@ -5,11 +5,18 @@
     position: fixed;
 }
 
-.search-bar, .upload {
+.search-bar,
+.upload {
     margin-top: 10px;
 }
 
 .logo {
     font-family: 'Baloo Chettan', cursive;
     font-size: 40px;
+}
+
+.card {
+    display: flex;
+    position: relative;
+    top: 100px;
 }
