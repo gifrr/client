@@ -9,7 +9,11 @@ Vue.component('card-image', {
     methods: {
         getlink() {
             return this.fbSharelink + this.gif.gif + this.last
+        },
+        getWhatsApp() {
+            return `https://api.whatsapp.com/send?phone=&text=%20%0D%0A${this.gif.title}%0D%0A${this.gif.gif}`
         }
+
     },
     template: `
     <div class="container">
@@ -24,12 +28,15 @@ Vue.component('card-image', {
                 <br><br>
                 
                 <div class="fb-share-button" :data-href="gif.gif" data-layout="button" data-size="large">
-                    <a target="_blank" :href="getlink()" class="fb-xfbml-parse-ignore">Share</a>
+                    <a target="_blank" :href="getlink()" class="fb-xfbml-parse-ignore">Share FB</a><br>
+                    <a target="_blank" :href="getWhatsApp()">SHARE
+        WA</a>
                 </div>
              
             </div>
                 
         </div>
     </div>
+    
     `
 })
