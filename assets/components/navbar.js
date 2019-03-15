@@ -8,7 +8,7 @@ Vue.component('navbar-gifrr', {
         submitFilter() {
             this.$emit('filter-gif', this.inputFilter)
         },
-        showUploadForm(){
+        showUploadForm() {
             this.$emit('show-form')
         }
     },

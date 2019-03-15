@@ -12,6 +12,7 @@ Vue.component('card-image', {
         }
     },
     template: `
+    <div class="container">
         <div class="card" style="width:400px">
             <img class="card-img-top" :src="gif.gif" alt="Card image"
                 style="width:100%">
@@ -29,5 +30,6 @@ Vue.component('card-image', {
             </div>
                 
         </div>
+    </div>
     `
 })
