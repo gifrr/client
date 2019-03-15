@@ -6,9 +6,10 @@ Vue.component('navbar-gifrr', {
     },
     methods: {
         submitFilter() {
-            // console.log('masuk');
-
             this.$emit('filter-gif', this.inputFilter)
+        },
+        showUploadForm(){
+            this.$emit('show-form')
         }
     },
     template: `
@@ -28,7 +29,7 @@ Vue.component('navbar-gifrr', {
             </div>
             <div class="d-flex justify-content-start col-sm-1 upload">
                 <div>
-                    <button class="btn btn-warning">UPLOAD</button>
+                    <button @click="showUploadForm" class="btn btn-warning">UPLOAD</button>
                 </div>
             </div>
 
