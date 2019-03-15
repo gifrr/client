@@ -5,23 +5,26 @@ Vue.component('create-gif-form', {
             tag: '',
             tags: [],
             gif: '',
-            file: ''
+            file: '',
+            showLoading: false,
+            form: true
         }
     },
     components: {
         vueTagsInput: vueTagsInput.default
     },
     methods: {
+        toHomepage() {
+            this.$emit('to-homepage', 'form')
+        },
         postGif() {
+            this.form = false
+            this.showLoading = true
             let gifData = {
                 title: this.title,
                 tags: this.tags,
                 gif: this.gif
             }
-            // let postReady = new FormData()
-            // postReady.append("image", this.file)
-            // postReady.append("data", JSON.stringify(data))
-            // this.$emit('post-article', postReady)
             baseURL({
                 url: `/gifs`,
                 method: 'post',
@@ -32,6 +35,11 @@ Vue.component('create-gif-form', {
             })
             .then(({data}) => {
                 console.log(data)
+                this.toHomepage()
+                setTimeout(() => { 
+                    this.form = true
+                    this.showLoading = false
+                }, 1000);
                 // CreatingArticleSucceed.fire({
                 //     type: 'success',
                 //     title: 'Article has been created'
@@ -57,9 +65,6 @@ Vue.component('create-gif-form', {
             })
             .then(({data}) => {
                 if (data) {
-                    data.forEach(e => {
-                        
-                    })
                     console.log(data)
                     this.tags = data.labels
                     this.gif = data.gif
@@ -72,7 +77,10 @@ Vue.component('create-gif-form', {
     },
     template: `
     <div id="create_post" class="container my-5 d-flex">
-        <div id="form-article" class="col-10">
+        <div v-if="showLoading" style="margin: 0 auto;">
+            <img src="https://static-steelkiwi-dev.s3.amazonaws.com/media/filer_public/4e/07/4e07eece-7c84-46e2-944d-1a6b856d7b5f/463ff844-6f36-4ffe-b051-fea983d39223.gif" />
+        </div>
+        <div id="form-article" class="col-10" v-if="form">
             <!-- <form id="new-post" method="post" v-on:submit.prevent="addArticle"> -->
                 <input type="text" placeholder="Title" class="container my-2 form-control" height="100px" style="font-size: 20pt;" v-model="title">
                 <div style="position:relative;" class="my-3">
