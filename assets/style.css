@@ -6,6 +6,16 @@
     z-index: 5;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: yellow;
+    font-weight: bold;
+}
+
 .search-bar,
 .upload {
     margin-top: 10px;

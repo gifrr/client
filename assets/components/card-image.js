@@ -30,7 +30,7 @@ Vue.component('card-image', {
                 <div class="fb-share-button" :data-href="gif.gif" data-layout="button" data-size="large">
                     <a target="_blank" :href="getlink()" class="fb-xfbml-parse-ignore">Share FB</a><br>
                     <a target="_blank" :href="getWhatsApp()">SHARE
-        WA</a>
+                        WA</a>
                 </div>
              
             </div>
