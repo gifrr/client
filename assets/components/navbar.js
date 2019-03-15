@@ -10,13 +10,16 @@ Vue.component('navbar-gifrr', {
         },
         showUploadForm() {
             this.$emit('show-form')
+        },
+        toHomepage(){
+            this.$emit('to-homepage')
         }
     },
     template: `
     <div class="container col-sm-12" id="navbar">
         <div class="row">
             <div class="col-sm-4 logo">
-                GIFRR
+                <a class="homepage" href="#" @click="toHomepage">GIFRR</a>
             </div>
             <div class="col-sm-4">
 
